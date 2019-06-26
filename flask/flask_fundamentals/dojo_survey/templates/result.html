@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='result.css') }}">
+    <title>Results</title>
+</head>
+<body>
+        <h1>Submitted Info</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}                          
+            {% for message in messages %}
+                <p>{{message}}</p>        
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    {% for result in results %}
+        <p>Name: {{ result['name'] }}</p>
+        <p>Dojo Location: {{ result['location'] }}</p>
+        <p>Favorite Language: {{ result['language'] }}</p>
+        <p>Comment: {{ result['comment'] }} </p>
+    {% endfor %}
+        <form action='/'>
+            <input type='submit' value='GO BACK' id='sub'>
+        </form>
+</body>
+</html>
+

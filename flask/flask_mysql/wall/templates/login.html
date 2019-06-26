@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='login.css')}}">
+    <title>Login and Registration</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Login and Registration</h1> 
+        <h2>Register here!</h2>
+
+            <form action='/register' method='POST' class="reg">
+                <h2>Register here!</h2>
+
+            First Name:
+            <div class='message'>
+                {% with ferror = get_flashed_messages(category_filter=['ferror']) %}  
+                    {% if ferror %}                            
+                        {% for message in ferror %}
+                        <p>{{ message }}</p>                  
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <input type='text' name='first_name'>
+            Last Name:
+            <div class='message'>
+                {% with lerror = get_flashed_messages(category_filter=['lerror']) %}  
+                    {% if lerror %}                            
+                        {% for message in lerror %}
+                        <p>{{ message }}</p>                  
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <input type='text' name='last_name'>
+            Email:
+            <div class='message'>
+                {% with eerror = get_flashed_messages(category_filter=['eerror']) %}  
+                    {% if eerror %}                            
+                        {% for message in eerror %}
+                        <p>{{ message }}</p>                  
+                        {% endfor %}
+                    {% endif %}
+                 {% endwith %}
+            </div>
+            <input type='text' name='email'>
+            Password:
+            <div class='message'>
+                {% with perror = get_flashed_messages(category_filter=['perror']) %}  
+                    {% if perror %}                            
+                        {% for message in perror %}
+                        <p>{{ message }}</p>                  
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <input type='password' name='password'>
+            Confirm password:
+            <input type='password' name='password_con'>
+            <input type='submit' value='Register!' class='submit'>
+            </form>
+
+
+        <form action='/login' method='POST' class='log'>
+            <h2>Login here!</h2> 
+            <div class='message'>             
+                {% with loerror = get_flashed_messages(category_filter=['loerror']) %}  
+                    {% if loerror %}                            
+                        {% for message in loerror %}
+                        <p>{{ message }}</p>                  
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            Email:<input type='text' name='e_log'>
+            Password:<input type='password' name='p_log'>
+            <input type='submit' value='Login!' class='submit'>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+.container h1{
+    color: green;
+}
+.container .row1{
+    margin:0px 0px;
+}
+.container .row1 .box1{
+    min-height: 30px;
+    width: 30px;
+    margin-right: -4px;
+    margin-top: -4px;
+    display: inline-block;
+    background-color: black;
+}
+.container .row1 .box2{
+    min-height: 30px;
+    width: 30px;
+    margin-right: -4px;
+    margin-top: -4px;
+    display: inline-block;
+    background-color: red;
+}
+
+.container .row2 .box1{
+    min-height: 30px;
+    width: 30px;
+    margin-right: -4px;
+    margin-top: -4px;
+    display: inline-block;
+    background-color: black;
+}
+.container .row2 .box2{
+    min-height: 30px;
+    width: 30px;
+    margin-right: -4px;
+    margin-top: -4px;
+    display: inline-block;
+    background-color: red;
+
+}

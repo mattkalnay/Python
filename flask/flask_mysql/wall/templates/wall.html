@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='wall.css')}}">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">CodingDojo Wall</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight"><a href="/logout">Logout</a></div>
+            <div class="p-2 bd-highlight"><p>Welcome, {{session['user'][0]['first_name']}}!</p></div>
+          </div>
+        </div>
+      </nav>
+ 
+
+      <div class="container"> 
+
+        <div class="left">
+
+            <h4> {{sent_mess[0]['count1']}} Message(s) for you</h4>
+              {% for rec_mess in rec_messes %}
+            
+            <div class="mess">
+              <p>{{ rec_mess['first_name']}} said ({{ rec_mess['TIMESTAMP'] }} hours ago): {{ rec_mess['message'] }}</p>
+                  
+              <a href="/trash/{{ rec_mess['id'] }}"><img src="{{ url_for('static', filename='trash.png') }}"></a>
+            </div>
+            {% endfor %}
+        </div>
+      
+
+        <div class="right">
+            <h4>Send Messages</h4>
+            <p>You have sent {{count[0]['count']}} messages so far.</p>
+
+            {% for buddy in buddies %}
+            <div class="form">
+            <form action='/message' method='POST'>
+              <div class = "row">
+              <div class="col-2">{{ buddy['first_name'] }}</div>
+              <input type="textarea" name='message' class="col-8 textbox">
+              <input type='hidden' name='rec_id' value='{{ buddy['id'] }}'>
+              <input type="submit" value="SEND" class="col-2 submit">
+            </div>
+            </form>
+            {% endfor %}
+        </div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+.container {
+    width: 70vw;
+
+}
+form .name {
+    display: block;
+    margin-right: 65vw;
+    margin-bottom: 25px;
+}
+
+form .location {
+    display: block;
+    margin-right: 65vw;
+    margin-bottom: 25px;
+}
+
+form .language {
+    display: block;
+    margin-right: 65vw;
+    margin-bottom: 25px;
+}
+
+form .comment {
+    display: block;
+    margin-right: 65vw;
+    width: 180px;
+    min-height: 100px;
+    margin-bottom: 25px;
+}
+
+form .submit {
+    display: block;
+    margin-left: 63vw
+}

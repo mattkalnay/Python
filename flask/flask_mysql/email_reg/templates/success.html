@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Success</title>
+</head>
+<body>
+        {% for email in email %}
+        <div class='message'>
+            <p>The email address you entered ({{ email['email']}}) is a VALID email address!  Thank you!</p>
+        </div>
+        {% endfor %}
+
+    <table>
+        {% for result in results %}
+        <tr>
+            <td>{{ result['email'] }}</td>
+            <td>{{ result['created_at'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

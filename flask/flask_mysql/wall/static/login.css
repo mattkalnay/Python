@@ -1,0 +1,60 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    /* outline: 1px solid #800080; */
+
+}
+
+.container {
+    padding: 20px 20px;
+}
+.reg {
+    /* background-color: gold; */
+    width: 40vw;
+    display: inline-block;
+
+}
+
+    .reg input{
+        display: block;
+        margin: 10px 10px;
+        width: 20vw;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .reg .submit {
+        width: 7vw;
+        height: 25px;
+        background-color: green;
+        font-size: 15px;
+        color: white;
+
+    }
+
+.log {
+    /* background-color: silver; */
+    width: 40vw;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 40px;
+}
+
+    .log input {
+        display: block;
+        margin: 10px 10px;
+        width: 20vw;
+        height: 30px;
+        font-size: 15px;
+
+    }
+    .log .submit {
+        width: 7vw;
+        height: 25px;
+        background-color: green;
+        font-size: 15px;
+        color: white;
+    }
+.message{
+    color: red;
+    font-size: 12px;
+}

@@ -1,0 +1,38 @@
+*{
+
+}
+
+.container {
+    text-align: center;
+
+}
+
+.container .table{
+    width : 90%;
+    margin-bottom: 20px;
+}
+
+
+    .container .table tr:nth-child(odd){
+        background: #b8d1f3
+    }
+    .container .table tr:nth-child(even){
+        background: #dae5f4
+    }
+
+.container .bottom {
+    border-top: 2px solid black;
+    justify-content: center;
+}
+    .container .bottom .form {
+        text-align: center;
+    }
+    .container .bottom .form .name{
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    .container .bottom .form .type{
+        display: inline-block;
+        margin-bottom: 5px;
+    }

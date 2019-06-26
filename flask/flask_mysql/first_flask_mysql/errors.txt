@@ -1,0 +1,15 @@
+RuntimeError: cryptography is required for sha256_password or caching_sha2_password
+
+AttributeError: 'NoneType' object has no attribute 'encoding'
+
+NameError: name 'pymysql' is not defined
+
+SyntaxError: unexpected EOF while parsing
+
+ERR_CONNECTION_REFUSED localhost refused to connect 
+
+ModuleNotFoundError: No module named 'Flask'
+
+The requested URL was not found on the server. 
+If you entered the URL manually please check your spelling and try again.
+

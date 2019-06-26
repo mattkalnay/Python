@@ -1,0 +1,38 @@
+if (x == "Too Low!")
+redirect('/low')
+if (x == "Too High!")
+redirect('/high')
+if (x == "Just Right!")
+redirect('/right')
+
+
+
+@app.route('/guess_one', methods=['POST'])
+def guess():
+    session['rng'] = random.randint(1,100)
+    session['guess'] = request.form['guess']
+    def rere(num1, num2):
+        if (int(num1) < int(num2)):
+            return "Too Low!"
+        if (int(num1) > int(num2)):
+            return "Too High!"
+        if (int(num1) == int(num2)):
+            return "Just Right!"
+    x = rere(session['guess'], session['rng'])
+    print(session['guess'], session['rng'], x)
+    return redirect ('/result', session['rng'], session[guess], x)
+
+@app.route('/result', methods=['POST'])
+def result():
+    session['guess'] = request.form['guess']
+    session['rng'] = session['rng']
+    def rere(num1, num2):
+        if (int(num1) < int(num2)):
+            return "Too Low!"
+        if (int(num1) > int(num2)):
+            return "Too High!"
+        if (int(num1) == int(num2)):
+            return "Just Right!"
+    x = rere(session['guess'], session['rng'])
+    print(session['guess'], session['rng'], x)
+    return render_template('result.html', x_template = x)

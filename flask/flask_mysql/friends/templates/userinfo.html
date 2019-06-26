@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Read (One)</title>
+</head>
+<body>
+    <form type='hidden' action='/users'>
+    <input type="submit" value='Home'>
+    </form>
+    {% for friend in friends %}
+        <h2>User {{ friend["id"] }}</h2>
+        <p>Full Name: {{ friend["first_name"] + " " + friend["last_name"] }} </p>
+        <p>Email: {{ friend["email"] }}</p>
+        <p>Created On: {{ friend["created_at"] }}</p>
+        <p>Last Updated On: {{ friend["updated_at"] }}</p>
+    
+
+    <form type='hidden' action='/user/{{ friend["id"] }}/edit'>
+        <input type="submit" value='Edit'>
+    </form>
+    <form type='hidden' action='/users/{{ friend["id"] }}/destroy'>
+        <input type="submit" value='Delete'>
+    </form>
+    {% endfor %}
+</body>
+</html>

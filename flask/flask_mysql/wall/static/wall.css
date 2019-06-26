@@ -1,0 +1,43 @@
+*{
+    /* outline: 1px solid pink */
+}
+
+.container .left {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+}
+    .container .left h4{
+        border-bottom: 1px solid black;
+        margin-bottom: 15px;
+    }
+    .container .left .mess p{
+        width: 75%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .container .left .mess a{
+        display: inline-block;
+        vertical-align: top;
+    }
+.container .right {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+    .container .right h4{
+        border-bottom: 1px solid black;
+        margin-bottom: 15px;
+    }
+
+    .container .right .form .textbox{
+        min-height: 80px;
+        padding-top: 0px;
+    }
+
+    .container .right .form .submit{
+        height: 40px;
+ 
+    }

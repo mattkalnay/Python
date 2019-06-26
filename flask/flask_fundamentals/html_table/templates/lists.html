@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='lists.css') }}">
+    <title>Lists</title>
+</head>
+<body>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student['first_name'] }}</td>
+                <td>{{ student['last_name'] }}</td>
+                <td>{{ student['first_name'] + " " + student['last_name'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update</title>
+</head>
+<body>
+    {% for friend in friends %}
+    <h2>Edit User {{ edit_id }}</h2>
+    <form action= "/update/{{ edit_id }}" method="POST">
+        First Name:<input type="text" name="first_name" placeholder= "{{ friend['first_name'] }}">
+        Last Name:<input type="text" name="last_name" placeholder= "{{ friend['last_name'] }}">
+        Email:<input type="text" name="email" placeholder= "{{ friend['email'] }}">
+        <input type="submit" value="Update">
+    </form>
+    {% endfor %}
+</body>
+</html>
