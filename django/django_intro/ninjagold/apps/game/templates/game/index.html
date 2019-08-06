@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'game/css/index.css' %}">
+</head>
+<body>
+    <p>Your Gold: {{request.session.gold}} </p>
+    <div class="routes">
+        <div class="farm box">
+            <h3>Farm</h3>
+            <h4>(earns 10-20 golds)</h4>
+            <form action="/farm" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="cave box">
+            <h3>Cave</h3>
+            <h4>(earns 5-10 golds)</h4>
+            <form action="/cave" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="house box">
+            <h3>House</h3>
+            <h4>(earns 2-5 golds)</h4>
+            <form action="/house" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div class="casino box">
+            <h3>Casino</h3>
+            <h4>(earns/takes 0-50 golds)</h4>
+            <form action="/casino" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+    </div>
+    <div class="activity">
+        <p>Activities:</p>
+        <div class="container">
+            {{ request.session.act }}
+        </div>
+    </div>
+
+
+</body>
+</html>

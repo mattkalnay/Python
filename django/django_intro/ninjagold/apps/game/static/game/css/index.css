@@ -1,0 +1,25 @@
+* {
+    /* outline: 1px solid pink;  */
+}
+
+.routes {
+    display: block;
+}
+
+    .routes .box {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        width: 10rem;
+        border: 1px solid black;
+        margin-right: 8rem;
+        margin-left: 8rem;
+        padding-bottom: 10px;
+    }
+
+.activity .container {
+    border: 1px solid black;
+    height: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
