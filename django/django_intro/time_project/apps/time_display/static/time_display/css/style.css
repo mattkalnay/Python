@@ -1,0 +1,23 @@
+
+.header {
+    text-align: center;
+    display: inline-block;
+    margin-left: 50rem;
+    width: 12rem;
+    
+} 
+
+    .header h4{
+        text-align: center;
+        padding: 10px 10px;
+        border: 1px solid black;
+    }
+
+.time {
+    margin-left: 50rem;
+    font-size: 30px;
+    width: 12rem;
+    text-align: center;
+    border: 1px solid black;
+    margin-top: 2rem;
+}

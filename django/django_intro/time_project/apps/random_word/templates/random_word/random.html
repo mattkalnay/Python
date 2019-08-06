@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random</title>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'random_word/css/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <p>Random Word (attempt #{{request.session.count}})</p>
+    </div>
+    <div class="box">
+        {{stg}}
+    </div>
+    <div class="generate">
+        <form action='/random'>
+            <input type='submit' value='Generate'>
+        </form>
+    </div>
+    <div class="reset">
+        <form action='/random/reset'>
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+</body>
+</html>
