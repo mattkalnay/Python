@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shows</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'restful_tv/css/show.css' %}">
+</head>
+<body>
+    <h1>All Shows</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Network</th>
+            <th>Release Date</th>
+            <th>Actions</th>
+        </tr>
+        {% for detail in details %}
+        <tr>
+            <td>{{detail.id}}</td>
+            <td>{{detail.title}}</td>
+            <td>{{detail.network}}</td>
+            <td>{{detail.release}}</td>
+            <td><a href="/shows/{{detail.id}}">Show</a>
+                <a href="/shows/{{detail.id}}/edit">Edit</a>
+                <a href="/shows/{{detail.id}}/delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/shows/new">Add a New Show</a>
+</body>
+</html>
